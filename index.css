@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --color-luxury-bg: var(--bg-color);
+  --color-luxury-ink: var(--text-color);
+  --color-luxury-gold: var(--accent-color);
+  --color-luxury-gold-light: var(--accent-light);
+  --color-luxury-cream: var(--card-bg);
+  --color-neon-cyan: #00f3ff;
+  --color-neon-purple: #bc13fe;
+  --color-neon-green: #39ff14;
+}
+
+:root {
+  --bg-color: #F4F1EA;
+  --text-color: #1C1917;
+  --accent-color: #947C5C;
+  --accent-light: #D4C3A3;
+  --card-bg: #FAF9F6;
+  --border-color: rgba(28, 25, 23, 0.1);
+}
+
+.dark {
+  --bg-color: #050505;
+  --text-color: #e5e5e5;
+  --accent-color: #C5A059; /* Luxury Gold for dark mode */
+  --accent-light: rgba(197, 160, 89, 0.2);
+  --card-bg: #111111;
+  --border-color: rgba(197, 160, 89, 0.2);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* DayPicker Minimalist Overrides */
+.rdp-minimal {
+  --rdp-cell-size: 40px;
+  --rdp-accent-color: var(--accent-color);
+  --rdp-background-color: var(--bg-color);
+  margin: 0;
+}
+
+.rdp-minimal .rdp-day_selected, 
+.rdp-minimal .rdp-day_selected:focus-visible, 
+.rdp-minimal .rdp-day_selected:hover {
+  background-color: var(--rdp-accent-color);
+  color: var(--bg-color);
+  border-radius: 0;
+}
+
+.rdp-minimal .rdp-day_range_middle {
+  background-color: var(--accent-light);
+  color: inherit;
+}
+
+.rdp-minimal .rdp-button:hover:not([disabled]):not(.rdp-day_selected) {
+  background-color: var(--accent-light);
+}
+
+.rdp-minimal .rdp-head_cell {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 400;
+  opacity: 0.4;
+}
+
+.rdp-minimal .rdp-caption_label {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.rdp-minimal .rdp-nav_button {
+  color: var(--text-color);
+  opacity: 0.4;
+}
+
+.rdp-minimal .rdp-nav_button:hover {
+  opacity: 1;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-color);
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Neon Glow */
+.neon-glow {
+  box-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color);
+}
+
+.neon-text {
+  text-shadow: 0 0 5px var(--accent-color), 0 0 10px var(--accent-color);
+}
